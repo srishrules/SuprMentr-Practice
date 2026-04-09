@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Manager</title>
+</head>
+
+<body>
+
+    <script>
+        let numStudents;
+
+        while (true) {
+            numStudents = prompt("Enter number of students:");
+
+            if (numStudents === null || numStudents.trim() === "") {
+                alert("Input cannot be empty!");
+                continue;
+            }
+
+            numStudents = Number(numStudents);
+
+            if (isNaN(numStudents) || numStudents <= 0) {
+                alert("Please enter a valid positive number!");
+            } else {
+                break;
+            }
+        }
+
+        let numSubjects;
+
+        while (true) {
+            numSubjects = prompt("Enter number of subjects:");
+
+            if (numSubjects === null || numSubjects.trim() === "") {
+                alert("Input cannot be empty!");
+                continue;
+            }
+
+            numSubjects = Number(numSubjects);
+
+            if (isNaN(numSubjects) || numSubjects <= 0) {
+                alert("Please enter a valid positive number!");
+            } else {
+                break;
+            }
+        }
+
+        let students = [];
+
+        for (let i = 0; i < numStudents; i++) {
+            let name = prompt("Enter student name:");
+            if (!/^[A-Za-z ]+$/.test(name)) {
+                alert("Name should contain only letters!");
+            }
+
+            let marks = [];
+            let total = 0;
+
+            for (let j = 0; j < numSubjects; j++) {
+                let mark;
+
+                while (true) {
+                    mark = prompt("Enter marks for subject " + (j + 1));
+
+                    if (mark === null || mark.trim() === "") {
+                        alert("Input cannot be empty!");
+                        continue;
+                    }
+
+                    mark = Number(mark);
+
+                    if (isNaN(mark)) {
+                        alert("Please enter a valid number!");
+                    } else if (mark < 0) {
+                        alert("Marks cannot be negative!");
+                    } else if (mark > 100) {
+                        alert("Marks cannot exceed 100!");
+                    } else {
+                        break;
+                    }
+                }
+
+                marks.push(mark);
+                total += mark;
+            }
+
+            let avg = total / numSubjects;
+
+            students.push({
+                name: name,
+                average: avg
+            });
+        }
+
+        let output = "Student Averages:\n";
+
+        students.forEach(student => {
+            output += student.name + ": " + student.average + "\n";
+        });
+
+        console.log(output);
+        alert(output);
+    </script>
+
+</body>
+
+</html>
