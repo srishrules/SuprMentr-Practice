@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Console Operations</title>
+</head>
+
+<body>
+    <script>
+        let a = Number(prompt("Enter first number:"));
+        let b = Number(prompt("Enter second number:"));
+        let op = prompt("Enter operation (+, -, *, /):").trim();
+        let result;
+        if (isNaN(a) || isNaN(b)) {
+            alert("Please enter valid numbers!");
+        } else {
+            let result;
+
+            if (op === "+") {
+                result = a + b;
+            } else if (op === "-") {
+                result = a - b;
+            } else if (op === "*") {
+                result = a * b;
+            } else if (op === "/") {
+                result = a / b;
+            } else {
+                result = "Invalid operation";
+            }
+
+            alert("Result: " + result);
+        }
+    </script>
+</body>
+
+</html>
