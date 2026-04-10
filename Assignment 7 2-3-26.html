@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Interactive Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #e6ccff;
+            padding: 30px;
+            border-radius: 15px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            background-color: #fff0f5;
+        }
+
+        button {
+            background-color: #b366ff;
+            color: white;
+            padding: 10px;
+            width: 95%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9933ff;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="form-container">
+        <h2>Interactive Form</h2>
+
+        <form id="myForm">
+            <input type="text" id="name" placeholder="Enter Name">
+            <input type="email" id="email" placeholder="Enter Email">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let message = document.getElementById("message");
+
+            let namePattern = /^[A-Za-z ]+$/;
+
+            if (!name.match(namePattern)) {
+                message.textContent = "Name should contain only letters!";
+                message.className = "error";
+                return;
+            }
+
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if (!email.match(emailPattern)) {
+                message.textContent = "Invalid email format!";
+                message.className = "error";
+                return;
+            }
+
+            if (password.length < 6) {
+                message.textContent = "Password must be at least 6 characters!";
+                message.className = "error";
+                return;
+            }
+
+            message.textContent = "Form submitted successfully!";
+            message.className = "success";
+        });
+    </script>
+
+</body>
+
+</html>
