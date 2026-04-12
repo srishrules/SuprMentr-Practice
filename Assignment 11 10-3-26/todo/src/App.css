@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  background-color: #ffe6f0;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  background-color: #fff0f6;
+  color: #4b0082;
+  border: 1px solid #d8b4f8;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  margin-right: 10px;
+}
+
+.button {
+  background-color: #d8b4f8;
+  color: #4b0082;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3e8ff;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.task button {
+  background: #ff8fab;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 10px;
+  color: white;
+  cursor: pointer;
+}
+
+h1 {
+  color: #ff85a2;
+}
+
+input:focus {
+  border: 2px solid #d63384;
+}
+
+.bow {
+  font-size: 100px;
+  margin: 0 100px;
+  filter: hue-rotate(310deg) saturate(1);
+}
+
+.button:hover {
+  background-color: #c084fc;
+}
+
+.task button:hover {
+  background: #ff5c8a;
+}
