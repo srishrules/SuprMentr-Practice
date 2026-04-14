@@ -10,7 +10,6 @@ function App() {
       <div className="bow">🎀</div>
       <div className="card">
 
-
         <h1>Task List</h1>
 
         <input
