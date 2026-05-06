@@ -1,0 +1,35 @@
+.app {
+    background-color: #ffe6f0;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: Arial;
+}
+
+.folder,
+.file {
+    margin: 5px 0;
+}
+
+.folder span {
+    cursor: pointer;
+    font-weight: bold;
+    color: #cc3399;
+}
+
+.file {
+    color: #ff66b2;
+}
+
+button {
+    margin-left: 5px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 6px;
+    background-color: #ff99cc;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff66b2;
+    color: white;
+}
